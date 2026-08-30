@@ -3,9 +3,8 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - "satya-site/**"
-      - ".github/workflows/gh-pages.yml"
+    paths-ignore:
+      - ".github/**"
   workflow_dispatch:
 
 permissions:
@@ -22,9 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy satya-site to gh-pages
+      - name: Deploy site to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./satya-site
+          publish_dir: .
           publish_branch: gh-pages
+          exclude_assets: ".github"
