@@ -50,7 +50,7 @@ body{
 .container{ max-width:var(--container); margin:0 auto; padding:0 28px; }
 
 h1,h2,h3,h4{ font-family:var(--display); font-weight:700; line-height:1.12; margin:0 0 .5em; letter-spacing:-.01em; }
-h1{ font-size:clamp(40px,6.4vw,84px); font-weight:900; }
+h1{ font-size:clamp(40px,6vw,72px); }
 h2{ font-size:clamp(30px,4.2vw,52px); }
 h3{ font-size:22px; font-weight:700; }
 h4{ font-size:18px; font-weight:700; }
@@ -341,9 +341,9 @@ section{ padding:120px 0; }
 
 /* ---------- whatsapp inline CTA ---------- */
 .btn-whatsapp{
-  background:#22c35e; color:#fff;
+  background:transparent; color:#1aa34d; border-color:#22c35e;
 }
-.btn-whatsapp:hover{ background:#1aa34d; color:#fff; }
+.btn-whatsapp:hover{ background:#22c35e; color:#fff; border-color:#22c35e; }
 .btn-whatsapp svg{ width:18px; height:18px; flex-shrink:0; }
 
 .numbered-list{ list-style:none; margin:0; padding:0; display:grid; gap:28px; counter-reset:num; }
@@ -412,7 +412,7 @@ section{ padding:120px 0; }
 .post-card .read-toggle .plus{ width:26px; height:26px; border-radius:50%; border:1.5px solid var(--ink); display:flex; align-items:center; justify-content:center; transition:transform .25s var(--ease); }
 .post-card[open] .read-toggle .plus{ transform:rotate(45deg); }
 .post-body{ padding:0 34px 40px; border-top:1px solid var(--paper-line); }
-.post-body-inner{ padding-top:26px; max-width:760px; color:var(--ink-soft); font-size:16px; }
+.post-body-inner{ padding-top:26px; max-width:620px; color:var(--ink-soft); font-size:16px; }
 .post-body-inner p{ margin:0 0 1.1em; }
 .post-body-inner .dialogue{ font-style:italic; color:var(--ink); }
 .post-list{ display:grid; gap:22px; }
