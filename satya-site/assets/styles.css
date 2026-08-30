@@ -597,7 +597,10 @@ body{ zoom:var(--a11y-zoom, 1); }
   .main-nav > a, .nav-drop > button{ width:100%; text-align:right; font-size:17px; padding:16px; }
   .nav-drop-menu{ position:static; opacity:1; visibility:visible; transform:none; box-shadow:none; margin-top:4px; display:none; }
   .nav-drop.open .nav-drop-menu{ display:block; }
-  .nav-cta{ margin-top:10px; text-align:center; justify-content:center; }
+  .main-nav .nav-cta{
+    display:flex; align-items:center; justify-content:center;
+    width:100%; margin-inline-start:0; margin-top:10px; text-align:center;
+  }
   .nav-toggle{ display:flex; }
 }
 @media (max-width:720px){
