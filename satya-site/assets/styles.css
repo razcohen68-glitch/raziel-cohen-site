@@ -3,8 +3,6 @@
    Design system: bold contrast, breath-motif motion, editorial serif + clean sans
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@300;400;500;600;700;800&display=swap');
-
 :root{
   --ink:        #182a35;
   --ink-2:      #213946;
