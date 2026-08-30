@@ -191,7 +191,7 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
 /* ---------- buttons ---------- */
 .btn{
   display:inline-flex; align-items:center; gap:10px;
-  font-family:var(--utility); font-weight:700; font-size:15.5px;
+  font-family:var(--utility); font-weight:600; font-size:15.5px;
   padding:16px 30px; border-radius:100px; border:2px solid transparent;
   transition:transform .22s var(--ease), background .22s, color .22s, border-color .22s;
   cursor:pointer;
@@ -578,7 +578,7 @@ body{ zoom:var(--a11y-zoom, 1); }
   .pillars-grid{ grid-template-columns:1fr; }
   .picker-grid{ grid-template-columns:repeat(2,1fr); }
   .footer-grid{ grid-template-columns:1fr; gap:32px; }
-  .cta-band{ flex-direction:column; align-items:flex-start; }
+  .cta-band{ flex-direction:column; align-items:center; text-align:center; }
 }
 @media (max-width:560px){
   .picker-grid{ grid-template-columns:1fr; }
@@ -602,6 +602,7 @@ body{ zoom:var(--a11y-zoom, 1); }
 @media (max-width:720px){
   .form-row{ grid-template-columns:1fr; }
   .hero{ padding:80px 0 90px; }
+  .hero-actions{ justify-content:center; }
   section{ padding:64px 0; }
   .contact-card{ padding:28px; }
   .cta-band{ padding:36px 26px; }
