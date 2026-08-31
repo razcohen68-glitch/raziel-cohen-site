@@ -401,18 +401,19 @@ section{ padding:120px 0; }
 .acc-item .acc-body p{ margin:0 0 .8em; }
 
 /* ---------- insights / blog ---------- */
-.post-card{ background:var(--paper); border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden; box-shadow:0 2px 16px rgba(24,42,53,.05); }
-.post-card summary{
-  list-style:none; cursor:pointer; padding:34px 34px 28px; display:flex; flex-direction:column; gap:14px;
+.post-card{
+  background:var(--paper); border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden;
+  box-shadow:0 2px 16px rgba(24,42,53,.05); padding:34px 34px 28px; display:flex; flex-direction:column; gap:14px;
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
 }
-.post-card summary::-webkit-details-marker{ display:none; }
+.post-card:hover{ transform:translateY(-4px); box-shadow:0 24px 48px rgba(24,42,53,.1); border-color:var(--coral-dim); }
 .post-card .tag{ font-family:var(--utility); font-size:12.5px; letter-spacing:.1em; color:var(--coral-dim); font-weight:700; }
 .post-card h3{ font-size:26px; margin:0; }
+.post-card h3 a:hover{ color:var(--coral-dim); }
 .post-card .excerpt{ color:var(--ink-soft); font-size:15.5px; margin:0; }
 .post-card .read-toggle{ font-family:var(--utility); font-weight:700; font-size:14px; color:var(--ink); display:flex; align-items:center; gap:8px; margin-top:4px; }
 .post-card .read-toggle .plus{ width:26px; height:26px; border-radius:50%; border:1.5px solid var(--ink); display:flex; align-items:center; justify-content:center; transition:transform .25s var(--ease); }
-.post-card[open] .read-toggle .plus{ transform:rotate(45deg); }
-.post-body{ padding:0 34px 40px; border-top:1px solid var(--paper-line); }
+.post-card .read-toggle:hover .plus{ transform:translateX(-3px); }
 .post-body-inner{ padding-top:26px; max-width:620px; color:var(--ink-soft); font-size:16px; }
 .post-body-inner p{ margin:0 0 1.1em; }
 .post-body-inner .dialogue{ font-style:italic; color:var(--ink); }
