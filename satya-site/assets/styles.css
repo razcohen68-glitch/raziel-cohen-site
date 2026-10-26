@@ -255,6 +255,7 @@ section{ padding:120px 0; }
 .section-ink{ background:var(--paper-2); color:var(--ink); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
 .section-ink .ink-soft-text{ color:var(--ink-soft); }
 .section-head{ max-width:640px; margin-bottom:64px; }
+#services{ scroll-margin-top:220px; }
 .section-head.center{ margin-inline:auto; text-align:center; }
 .section-head p{ color:var(--ink-soft); font-size:17.5px; }
 .section-ink .section-head p{ color:var(--ink-soft); }
