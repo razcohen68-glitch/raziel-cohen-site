@@ -1,4 +1,4 @@
-// רז כהן — מאמן אישי | script.js
+// רז כהן - מאמן אישי | script.js
 (function(){
   "use strict";
 
