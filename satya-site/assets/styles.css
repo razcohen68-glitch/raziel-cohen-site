@@ -556,8 +556,12 @@ body{ zoom:var(--a11y-zoom, 1); }
 .cookie-btn-decline{ background:none; color:var(--paper); border-color:var(--paper-soft); }
 .cookie-btn-decline:hover{ border-color:var(--paper); }
 @media (max-width:640px){
-  .cookie-banner-inner{ flex-direction:column; align-items:stretch; text-align:center; }
-  .cookie-banner-actions{ justify-content:center; }
+  .cookie-banner{ padding:14px 18px 16px; }
+  .cookie-banner-inner{ flex-direction:column; align-items:stretch; gap:12px; }
+  .cookie-banner p{ font-size:13.5px; line-height:1.5; }
+  .cookie-extra{ display:none; }
+  .cookie-banner-actions{ gap:10px; flex-wrap:nowrap; }
+  .cookie-btn{ flex:1; padding:10px 12px; }
 }
 
 /* ---------- responsive ---------- */
