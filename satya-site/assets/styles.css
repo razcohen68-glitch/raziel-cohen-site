@@ -48,11 +48,11 @@ body{
 
 .container{ max-width:var(--container); margin:0 auto; padding:0 28px; }
 
-h1,h2,h3,h4{ font-family:var(--display); font-weight:700; line-height:1.12; margin:0 0 .5em; letter-spacing:-.01em; }
+h1,h2,h3{ font-family:var(--display); font-weight:700; line-height:1.12; margin:0 0 .5em; letter-spacing:-.01em; }
 h1{ font-size:clamp(40px,6vw,72px); }
 h2{ font-size:clamp(30px,4.2vw,52px); }
 h3{ font-size:22px; font-weight:700; }
-h4{ font-size:18px; font-weight:700; }
+h1,h2{ text-wrap:balance; }
 p{ margin:0 0 1em; }
 a{ color:inherit; text-decoration:none; }
 
@@ -135,7 +135,7 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
   animation:breathe 3.6s ease-in-out infinite;
 }
 .brand-text{ font-family:var(--display); font-weight:700; font-size:19px; line-height:1.15; }
-.brand-text span{ display:block; font-family:var(--utility); font-weight:400; font-size:11.5px; color:var(--ink-soft); letter-spacing:.04em; margin-top:2px; }
+.brand-text span{ display:block; font-family:var(--utility); font-weight:400; font-size:12px; color:var(--ink-soft); letter-spacing:.04em; margin-top:2px; }
 
 .main-nav{ display:flex; align-items:center; gap:2px; }
 .main-nav > a, .nav-drop > button{
@@ -294,7 +294,7 @@ section{ padding:120px 0; }
 .pillars-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--paper-line); border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden; }
 .pillar-cell{ background:var(--paper); padding:32px 28px; transition:background .25s; }
 .pillar-cell:hover{ background:var(--paper-2); }
-.pillar-cell h4{ margin-bottom:10px; color:var(--coral-dim); }
+.pillar-cell h3{ font-size:18px; margin-bottom:10px; color:var(--coral-dim); }
 .pillar-cell p{ font-size:15px; color:var(--ink-soft); margin:0; }
 
 .picker-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--paper-line); border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden; margin-bottom:56px; }
@@ -341,7 +341,7 @@ section{ padding:120px 0; }
 
 /* ---------- whatsapp inline CTA ---------- */
 .btn-whatsapp{
-  background:transparent; color:#1aa34d; border-color:#22c35e;
+  background:transparent; color:#15803d; border-color:#22c35e;
 }
 .btn-whatsapp:hover{ background:#22c35e; color:#fff; border-color:#22c35e; }
 .btn-whatsapp svg{ width:18px; height:18px; flex-shrink:0; }
@@ -381,7 +381,7 @@ section{ padding:120px 0; }
 .steps{ display:grid; gap:2px; background:var(--paper-line); border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden; }
 .step{ background:var(--paper); padding:30px 32px; display:flex; gap:24px; align-items:flex-start; }
 .step .n{ font-family:var(--display); font-size:15px; font-weight:700; color:var(--coral-dim); flex-shrink:0; padding-top:2px; width:auto; }
-.step h4{ margin-bottom:6px; }
+.step h3{ font-size:18px; margin-bottom:6px; }
 .step p{ margin:0; color:var(--ink-soft); font-size:15px; }
 
 /* ---------- FAQ / accordion ---------- */
@@ -456,7 +456,7 @@ section{ padding:120px 0; }
 .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:48px; padding-bottom:48px; border-bottom:1px solid var(--paper-line); }
 .footer-brand .brand-text{ color:var(--ink); }
 .footer-brand p{ margin-top:18px; max-width:340px; font-size:14.5px; }
-.site-footer h4{ font-family:var(--utility); font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); margin-bottom:18px; font-weight:700; }
+.site-footer h3{ font-family:var(--utility); font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); margin-bottom:18px; font-weight:700; }
 .site-footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:12px; font-size:14.5px; }
 .site-footer a:hover{ color:var(--coral-dim); }
 .footer-bottom{ padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12.5px; }
@@ -520,7 +520,7 @@ html.a11y-underline a{ text-decoration:underline !important; text-underline-offs
 html.a11y-readable body, html.a11y-readable body *{
   font-family:Arial, Helvetica, sans-serif !important; line-height:1.85 !important; letter-spacing:.01em !important;
 }
-html.a11y-headings h1, html.a11y-headings h2, html.a11y-headings h3, html.a11y-headings h4{
+html.a11y-headings h1, html.a11y-headings h2, html.a11y-headings h3{
   outline:3px solid var(--coral); outline-offset:4px; border-radius:4px;
 }
 html.a11y-nomotion *, html.a11y-nomotion *::before, html.a11y-nomotion *::after{
