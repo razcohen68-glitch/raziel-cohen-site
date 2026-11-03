@@ -286,7 +286,8 @@ section{ padding:120px 0; }
 }
 .link-card:hover::before{ opacity:1; }
 .link-card .tag{ font-family:var(--utility); font-size:12.5px; letter-spacing:.1em; color:var(--coral-dim); margin-bottom:18px; position:relative; font-weight:700; }
-.link-card h3{ font-size:23px; margin-bottom:14px; position:relative; }
+.link-card h2, .link-card h3{ font-size:23px; margin-bottom:14px; position:relative; }
+.link-card h2{ text-wrap:wrap; }
 .link-card p{ color:var(--ink-soft); font-size:15.5px; line-height:1.6; flex-grow:1; position:relative; }
 .link-card .link{ position:relative; font-family:var(--utility); font-weight:700; color:var(--coral-dim); margin:10px 0 -8px; padding:8px 0; display:inline-flex; align-items:center; gap:8px; }
 .link-card .link:hover{ gap:12px; }
