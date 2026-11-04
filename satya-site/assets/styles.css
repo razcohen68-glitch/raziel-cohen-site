@@ -235,8 +235,8 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
 /* ---------- sections ---------- */
 section{ padding:120px 0; }
 .section-tight{ padding:88px 0; }
-.section-soft{ background:var(--paper-2); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
-.section-ink{ background:var(--paper-2); color:var(--ink); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
+.section-soft, .section-ink{ background:var(--paper-2); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
+.section-ink{ color:var(--ink); }
 .section-ink .ink-soft-text{ color:var(--ink-soft); }
 .section-head{ max-width:640px; margin-bottom:64px; }
 #services{ scroll-margin-top:220px; }
@@ -447,6 +447,8 @@ section{ padding:120px 0; }
 .site-footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:12px; font-size:14.5px; }
 .site-footer a:hover{ color:var(--coral-dim); }
 .site-footer li a{ padding:6px 0; }
+.link-btn{ background:none; border:0; padding:6px 0; font:inherit; color:inherit; text-align:start; cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+.link-btn:hover{ color:var(--coral-dim); }
 .footer-bottom{ padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12.5px; }
 
 /* ---------- floating whatsapp ---------- */
@@ -542,8 +544,8 @@ body{ zoom:var(--a11y-zoom, 1); }
 }
 .cookie-btn-accept{ background:var(--coral-dim); color:#fff; }
 .cookie-btn-accept:hover{ background:var(--coral-darker); }
-.cookie-btn-decline{ background:none; color:var(--paper); border-color:var(--paper-soft); }
-.cookie-btn-decline:hover{ border-color:var(--paper); }
+.cookie-btn-decline{ background:var(--paper); color:var(--ink); }
+.cookie-btn-decline:hover{ background:var(--paper-2); }
 @media (max-width:640px){
   .cookie-banner{ padding:14px 18px 16px; }
   .cookie-banner-inner{ flex-direction:column; align-items:stretch; gap:12px; }

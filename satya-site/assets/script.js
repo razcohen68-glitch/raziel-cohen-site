@@ -97,6 +97,16 @@
     }
   } catch(err){ console.error('form error', err); }
 
+  // ---- contact topic preselect (?topic=personal|couples|teens) ----
+  try{
+    var topicSel = document.getElementById('topic');
+    if(topicSel){
+      var topicMap = { personal: 'אימון אישי', teens: 'אימון לבני נוער / מתבגרים', couples: 'אימון זוגי' };
+      var wanted = new URLSearchParams(window.location.search).get('topic');
+      if(wanted && topicMap[wanted]){ topicSel.value = topicMap[wanted]; }
+    }
+  } catch(err){ console.error('topic preselect error', err); }
+
   // ---- accessibility widget ----
   try{
     var a11yBtn = document.querySelector('.a11y-btn');
@@ -263,9 +273,22 @@
     if(declineBtn){
       declineBtn.addEventListener('click', function(){
         try{ localStorage.setItem(CONSENT_KEY, 'declined'); } catch(e){}
+        window['ga-disable-' + GA_ID] = true;
+        document.cookie.split(';').forEach(function(c){
+          var name = c.split('=')[0].trim();
+          if(name.indexOf('_ga') === 0){
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          }
+        });
         if(banner){ banner.classList.remove('show'); }
       });
     }
+    document.querySelectorAll('.js-cookie-settings').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        try{ localStorage.removeItem(CONSENT_KEY); } catch(e){}
+        if(banner){ banner.classList.add('show'); }
+      });
+    });
   } catch(err){ console.error('cookie consent error', err); }
 
   // ---- current year in footer ----
