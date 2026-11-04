@@ -124,16 +124,7 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
 }
 
 .brand{ display:flex; align-items:center; gap:12px; }
-.brand-mark{
-  position:relative; width:38px; height:38px; border-radius:50%;
-  border:2px solid var(--coral);
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.brand-mark::before{
-  content:''; width:12px; height:12px; border-radius:50%; background:var(--coral);
-  animation:breathe 3.6s ease-in-out infinite;
-}
+.brand-mark{ display:block; width:46px; height:32px; border-radius:6px; flex-shrink:0; }
 .brand-text{ font-family:var(--display); font-weight:700; font-size:19px; line-height:1.15; }
 .brand-text span{ display:block; font-family:var(--utility); font-weight:400; font-size:12px; color:var(--ink-soft); letter-spacing:.04em; margin-top:2px; }
 
