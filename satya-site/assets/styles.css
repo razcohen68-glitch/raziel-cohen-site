@@ -236,6 +236,7 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
 .breadcrumb a{ color:var(--ink-soft); border-bottom:1px solid transparent; padding:6px 3px; margin:0 -3px; }
 .breadcrumb a:hover{ color:var(--ink); border-color:var(--ink); }
 .page-hero p{ font-size:18px; color:var(--ink-soft); max-width:640px; }
+.page-hero p.local-line{ font-size:16px; font-weight:600; margin-top:-6px; }
 .page-hero h1{ font-size:clamp(34px,5vw,58px); }
 
 /* ---------- sections ---------- */
