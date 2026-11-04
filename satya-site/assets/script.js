@@ -303,4 +303,10 @@
   } catch(err){ console.error('cookie consent error', err); }
 
 
+  // ---- current year in footer ----
+  try{
+    var yearEls = document.querySelectorAll('.js-year');
+    yearEls.forEach(function(el){ el.textContent = new Date().getFullYear(); });
+  } catch(err){ console.error('year error', err); }
+
 })();
