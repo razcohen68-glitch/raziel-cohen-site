@@ -454,7 +454,7 @@ section{ padding:96px 0; }
 
 /* ---------- floating whatsapp ---------- */
 .float-cta{
-  position:fixed; bottom:26px; left:26px; z-index:300;
+  position:fixed; bottom:calc(26px + var(--cookie-h, 0px)); left:26px; z-index:300;
   width:60px; height:60px; border-radius:50%; background:#22c35e;
   display:flex; align-items:center; justify-content:center;
   box-shadow:0 14px 30px rgba(34,195,94,.4);
@@ -466,7 +466,7 @@ section{ padding:96px 0; }
 
 /* ---------- accessibility widget ---------- */
 .a11y-btn{
-  position:fixed; bottom:26px; right:26px; z-index:310;
+  position:fixed; bottom:calc(26px + var(--cookie-h, 0px)); right:26px; z-index:310;
   width:56px; height:56px; border-radius:50%; background:var(--paper);
   color:var(--ink); border:2px solid var(--coral-dim);
   display:flex; align-items:center; justify-content:center;
@@ -477,7 +477,7 @@ section{ padding:96px 0; }
 .a11y-btn svg{ width:26px; height:26px; }
 
 .a11y-panel{
-  position:fixed; bottom:92px; right:26px; z-index:310;
+  position:fixed; bottom:calc(92px + var(--cookie-h, 0px)); right:26px; z-index:310;
   width:300px; max-width:calc(100vw - 40px); max-height:min(72vh,560px); overflow-y:auto;
   background:var(--paper); border:1px solid var(--paper-line); border-radius:18px;
   box-shadow:0 30px 60px rgba(20,19,26,.32);
@@ -520,8 +520,8 @@ html.a11y-nomotion *, html.a11y-nomotion *::before, html.a11y-nomotion *::after{
 }
 body{ zoom:var(--a11y-zoom, 1); }
 @media (max-width:480px){
-  .a11y-btn{ width:50px; height:50px; bottom:20px; right:16px; }
-  .a11y-panel{ right:16px; bottom:80px; width:calc(100vw - 32px); }
+  .a11y-btn{ width:50px; height:50px; bottom:calc(20px + var(--cookie-h, 0px)); right:16px; }
+  .a11y-panel{ right:16px; bottom:calc(80px + var(--cookie-h, 0px)); width:calc(100vw - 32px); }
 }
 
 /* ---------- cookie consent banner ---------- */
@@ -548,12 +548,12 @@ body{ zoom:var(--a11y-zoom, 1); }
 .cookie-btn-decline{ background:var(--paper); color:var(--ink); }
 .cookie-btn-decline:hover{ background:var(--paper-2); }
 @media (max-width:640px){
-  .cookie-banner{ padding:14px 18px 16px; }
-  .cookie-banner-inner{ flex-direction:column; align-items:stretch; gap:12px; }
-  .cookie-banner p{ font-size:13.5px; line-height:1.5; }
+  .cookie-banner{ padding:10px 16px 12px; }
+  .cookie-banner-inner{ flex-direction:column; align-items:stretch; gap:8px; }
+  .cookie-banner p{ font-size:12.5px; line-height:1.4; }
   .cookie-extra{ display:none; }
   .cookie-banner-actions{ gap:10px; flex-wrap:nowrap; }
-  .cookie-btn{ flex:1; padding:10px 12px; }
+  .cookie-btn{ flex:1; padding:8px 10px; font-size:14px; }
 }
 
 /* ---------- responsive ---------- */
