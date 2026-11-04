@@ -48,7 +48,7 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; scroll-padding-bottom:calc(var(--cookie-h, 0px) + 24px); }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
@@ -472,7 +472,7 @@ section{ padding:96px 0; }
 }
 
 /* ---------- footer ---------- */
-.site-footer{ background:var(--paper-2); color:var(--ink-soft); padding:72px 0 28px; border-top:1px solid var(--paper-line); }
+.site-footer{ background:var(--paper-2); color:var(--ink-soft); padding:72px 0 96px; /* room for the floating buttons */ border-top:1px solid var(--paper-line); }
 .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:48px; padding-bottom:48px; border-bottom:1px solid var(--paper-line); }
 .footer-brand .brand-text{ color:var(--ink); }
 .footer-brand p{ margin-top:18px; max-width:340px; font-size:14.5px; }
@@ -510,7 +510,7 @@ section{ padding:96px 0; }
 
 .a11y-panel{
   position:fixed; bottom:calc(92px + var(--cookie-h, 0px)); right:26px; z-index:310;
-  width:300px; max-width:calc(100vw - 40px); max-height:min(72vh,560px); overflow-y:auto;
+  width:300px; max-width:calc((100vw - 40px) / var(--a11y-zoom, 1)); max-height:min(calc(100vh / var(--a11y-zoom, 1) - 112px),560px); overflow-y:auto;
   background:var(--paper); border:1px solid var(--paper-line); border-radius:18px;
   box-shadow:0 30px 60px rgba(20,19,26,.32);
   padding:20px; display:none;
@@ -553,7 +553,7 @@ html.a11y-nomotion *, html.a11y-nomotion *::before, html.a11y-nomotion *::after{
 body{ zoom:var(--a11y-zoom, 1); }
 @media (max-width:640px){
   .a11y-btn{ width:50px; height:50px; bottom:calc(20px + var(--cookie-h, 0px)); right:16px; }
-  .a11y-panel{ right:16px; bottom:calc(80px + var(--cookie-h, 0px)); width:calc(100vw - 32px); }
+  .a11y-panel{ right:16px; bottom:calc(80px + var(--cookie-h, 0px)); width:calc((100vw - 32px) / var(--a11y-zoom, 1)); }
 }
 
 /* ---------- cookie consent banner ---------- */

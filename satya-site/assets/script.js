@@ -251,6 +251,21 @@
       window.gtag('config', GA_ID);
     }
 
+    // Stop GA for this page and delete its cookies (for the host and parent domain).
+    function stopAnalytics(){
+      window['ga-disable-' + GA_ID] = true;
+      var host = location.hostname, parts = host.split('.'), domains = [host, '.' + host];
+      if(parts.length > 2){ domains.push('.' + parts.slice(-2).join('.')); }
+      document.cookie.split(';').forEach(function(c){
+        var name = c.split('=')[0].trim();
+        if(name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0){
+          var exp = '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          document.cookie = name + exp;
+          domains.forEach(function(d){ document.cookie = name + exp + '; domain=' + d; });
+        }
+      });
+    }
+
     var banner = document.querySelector('.cookie-banner');
     var acceptBtn = document.querySelector('.cookie-btn-accept');
     var declineBtn = document.querySelector('.cookie-btn-decline');
@@ -277,6 +292,7 @@
     if(acceptBtn){
       acceptBtn.addEventListener('click', function(){
         try{ localStorage.setItem(CONSENT_KEY, 'accepted'); } catch(e){}
+        window['ga-disable-' + GA_ID] = false;
         setBanner(false);
         loadGoogleAnalytics();
       });
@@ -284,19 +300,14 @@
     if(declineBtn){
       declineBtn.addEventListener('click', function(){
         try{ localStorage.setItem(CONSENT_KEY, 'declined'); } catch(e){}
-        window['ga-disable-' + GA_ID] = true;
-        document.cookie.split(';').forEach(function(c){
-          var name = c.split('=')[0].trim();
-          if(name.indexOf('_ga') === 0){
-            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
-          }
-        });
+        stopAnalytics();
         setBanner(false);
       });
     }
     document.querySelectorAll('.js-cookie-settings').forEach(function(btn){
       btn.addEventListener('click', function(){
         try{ localStorage.removeItem(CONSENT_KEY); } catch(e){}
+        stopAnalytics();
         if(banner){ setBanner(true); }
       });
     });
