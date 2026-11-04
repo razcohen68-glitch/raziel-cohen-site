@@ -299,8 +299,12 @@ section{ padding:96px 0; }
 .link-card h2, .link-card h3{ font-size:23px; font-weight:600; margin-bottom:14px; position:relative; }
 .link-card h2{ text-wrap:wrap; }
 .link-card p{ color:var(--ink-soft); font-size:15.5px; line-height:1.6; flex-grow:1; position:relative; }
-.link-card .link{ position:relative; font-family:var(--utility); font-weight:700; color:var(--coral-dim); margin:10px 0 -8px; padding:8px 0; display:inline-flex; align-items:center; gap:8px; }
+.link-card .link{ position:static; font-family:var(--utility); font-weight:700; color:var(--coral-dim); margin:10px 0 -8px; padding:8px 0; display:inline-flex; align-items:center; gap:8px; }
 .link-card .link:hover{ gap:12px; }
+/* whole card is clickable: the .link anchor stretches over the card (same destination as any title link inside) */
+.link-card .link::after{ content:''; position:absolute; inset:0; z-index:2; }
+.link-card:has(.link:focus-visible){ outline:2px solid var(--coral-dim); outline-offset:3px; }
+.link-card:has(.link:focus-visible) .link:focus-visible{ outline:none; }
 
 .pillars-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--paper-line); border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden; }
 .pillar-cell{ background:var(--paper); padding:32px 28px; transition:background .25s; }
@@ -312,6 +316,10 @@ section{ padding:96px 0; }
 .picker-grid .pillar-cell{ display:block; text-decoration:none; padding:26px 24px; }
 .picker-grid .pillar-cell .btn-arrow{ font-size:15px; color:var(--coral-dim); font-weight:700; display:inline-block; margin-top:10px; transition:transform .22s var(--ease); }
 .picker-grid .pillar-cell:hover .btn-arrow{ transform:translateX(-5px); }
+/* picker cells are links: same hover language as .link-card (coral border), kept inside the grid so nothing is clipped */
+.picker-grid .pillar-cell{ position:relative; }
+.picker-grid .pillar-cell:hover{ box-shadow:inset 0 0 0 1px var(--coral-dim), inset 0 0 28px rgba(255,75,62,.07); }
+.picker-grid .pillar-cell:focus-visible{ outline-offset:-3px; }
 
 .check-list{ list-style:none; margin:0; padding:0; display:grid; gap:18px; }
 .check-list li{ display:flex; gap:16px; align-items:flex-start; }
