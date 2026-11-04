@@ -470,8 +470,8 @@ section{ padding:96px 0; }
 }
 .about-intro{ display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:start; }
 @media (max-width:840px){
-  .about-intro{ grid-template-columns:1fr; }
-  .portrait-frame{ margin-bottom:12px; }
+  .about-intro{ grid-template-columns:minmax(0,1fr); }
+  .portrait-frame{ margin-bottom:12px; max-width:100%; } /* 70vw ignores body zoom: cap by the container (desktop keeps 300px) */
 }
 
 /* ---------- footer ---------- */
@@ -677,7 +677,7 @@ body{ zoom:var(--a11y-zoom, 1); }
 .u-w-860.u-w-860{ max-width:860px; }
 .u-align-start.u-align-start{ align-items:start; }
 .u-h2-22-mb22.u-h2-22-mb22{ font-size:22px; margin-bottom:22px; }
-.u-grid-gap20.u-grid-gap20{ display:grid; gap:20px; margin-bottom:36px; }
+.u-grid-gap20.u-grid-gap20{ display:grid; grid-template-columns:minmax(0,1fr); gap:20px; margin-bottom:36px; }
 .u-boxed.u-boxed{ border:1px solid var(--paper-line); border-radius:16px; background:var(--paper-2); }
 .u-h2-20-mb6.u-h2-20-mb6{ font-size:20px; margin-bottom:6px; }
 .u-note-15-mb26.u-note-15-mb26{ color:var(--ink-soft); font-size:15px; margin-bottom:26px; }
@@ -690,3 +690,6 @@ body{ zoom:var(--a11y-zoom, 1); }
 .u-w-760-mt24.u-w-760-mt24{ max-width:760px; margin-top:24px; }
 .u-w-720-mt32.u-w-720-mt32{ max-width:720px; margin-top:32px; color:var(--ink-soft); }
 .u-ink.u-ink{ color:var(--ink); }
+
+/* body zoom (a11y widget) does not rescale vw/min-content; let long links/emails wrap instead of clipping */
+main a{ overflow-wrap:anywhere; }
