@@ -7,6 +7,8 @@
   --paper:      #fdfcfa;
   --paper-2:    #ffffff;
   --paper-line: #e6dfcd;
+  --wa:         #22c35e;   /* WhatsApp green (dark ink text/icon on it: 6.4:1) */
+  --wa-hover:   #1da851;
   --coral:      #ff4b3e;
   --coral-dim:  #c73528;
   --coral-darker:#8f2117;
@@ -158,11 +160,11 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
 
 .nav-cta{
   margin-inline-start:10px;
-  background:#15803d !important; color:#fff !important;
+  background:var(--wa) !important; color:var(--ink) !important;
   padding:11px 22px !important; border-radius:100px !important;
   font-weight:700 !important;
 }
-.nav-cta:hover{ background:#166534 !important; color:#fff !important; }
+.nav-cta:hover{ background:var(--wa-hover) !important; color:var(--ink) !important; }
 
 .nav-toggle{
   display:none; width:44px; height:44px; border-radius:10px;
@@ -329,12 +331,12 @@ section{ padding:96px 0; }
 
 /* ---------- whatsapp inline CTA ---------- */
 .btn-whatsapp{
-  background:transparent; color:#15803d; border-color:#22c35e;
+  background:transparent; color:#15803d; border-color:var(--wa);
 }
-.btn-whatsapp:hover{ background:#22c35e; color:#fff; border-color:#22c35e; }
+.btn-whatsapp:hover{ background:var(--wa); color:var(--ink); border-color:var(--wa); }
 .btn-whatsapp svg{ width:18px; height:18px; flex-shrink:0; }
-.cta-actions .btn-whatsapp, .hero-actions .btn-whatsapp{ background:#15803d; color:#fff; border-color:#15803d; }
-.cta-actions .btn-whatsapp:hover, .hero-actions .btn-whatsapp:hover{ background:#166534; color:#fff; border-color:#166534; }
+.cta-actions .btn-whatsapp, .hero-actions .btn-whatsapp{ background:var(--wa); color:var(--ink); border-color:var(--wa); }
+.cta-actions .btn-whatsapp:hover, .hero-actions .btn-whatsapp:hover{ background:var(--wa-hover); color:var(--ink); border-color:var(--wa-hover); }
 
 .numbered-list{ list-style:none; margin:0; padding:0; display:grid; gap:28px; counter-reset:num; }
 .numbered-list li{ display:flex; gap:22px; }
@@ -458,7 +460,7 @@ section{ padding:96px 0; }
 /* ---------- floating whatsapp ---------- */
 .float-cta{
   position:fixed; bottom:calc(26px + var(--cookie-h, 0px)); left:26px; z-index:300;
-  width:60px; height:60px; border-radius:50%; background:#22c35e;
+  width:60px; height:60px; border-radius:50%; background:var(--wa);
   display:flex; align-items:center; justify-content:center;
   box-shadow:0 14px 30px rgba(34,195,94,.4);
   transition:transform .25s var(--ease);
