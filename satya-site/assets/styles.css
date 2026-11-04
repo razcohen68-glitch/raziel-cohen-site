@@ -464,7 +464,7 @@ section{ padding:96px 0; }
   transition:transform .25s var(--ease);
 }
 .float-cta:hover{ transform:scale(1.08); }
-.float-cta svg{ width:28px; height:28px; }
+.float-cta svg{ width:28px; height:28px; fill:var(--ink); } /* dark icon on bright green: 6.4:1 (white was 2.3:1) */
 .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
 /* ---------- accessibility widget ---------- */
