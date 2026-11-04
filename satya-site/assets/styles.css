@@ -158,11 +158,11 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
 
 .nav-cta{
   margin-inline-start:10px;
-  background:var(--coral-dim) !important; color:#fff !important;
+  background:#15803d !important; color:#fff !important;
   padding:11px 22px !important; border-radius:100px !important;
   font-weight:700 !important;
 }
-.nav-cta:hover{ background:var(--coral-darker) !important; color:#fff !important; }
+.nav-cta:hover{ background:#166534 !important; color:#fff !important; }
 
 .nav-toggle{
   display:none; width:44px; height:44px; border-radius:10px;
@@ -333,6 +333,8 @@ section{ padding:96px 0; }
 }
 .btn-whatsapp:hover{ background:#22c35e; color:#fff; border-color:#22c35e; }
 .btn-whatsapp svg{ width:18px; height:18px; flex-shrink:0; }
+.cta-actions .btn-whatsapp, .hero-actions .btn-whatsapp{ background:#15803d; color:#fff; border-color:#15803d; }
+.cta-actions .btn-whatsapp:hover, .hero-actions .btn-whatsapp:hover{ background:#166534; color:#fff; border-color:#166534; }
 
 .numbered-list{ list-style:none; margin:0; padding:0; display:grid; gap:28px; counter-reset:num; }
 .numbered-list li{ display:flex; gap:22px; }
