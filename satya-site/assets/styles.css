@@ -240,9 +240,6 @@ main p a:hover, .site-footer a:hover, .contact-info-item a:hover, .acc-item a:ho
 .hero h1 em{ font-style:normal; color:var(--coral-dim); }
 .hero-lede{ font-size:20px; color:var(--ink-soft); max-width:600px; margin-bottom:44px; }
 .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-.hero-stats{ display:flex; gap:44px; margin-top:64px; flex-wrap:wrap; }
-.hero-stat b{ display:block; font-family:var(--display); font-size:34px; color:var(--coral-dim); }
-.hero-stat span{ font-family:var(--utility); font-size:13px; color:var(--ink-soft); }
 
 /* generic page hero (sub-pages) */
 .page-hero{ background:var(--paper-2); color:var(--ink); padding:76px 0 68px; position:relative; overflow:hidden; border-bottom:1px solid var(--paper-line); }
@@ -633,7 +630,6 @@ body{ zoom:var(--a11y-zoom, 1); }
 }
 @media (max-width:640px){
   h1{ font-size:clamp(32px,10vw,44px); }
-  .hero-stats{ gap:28px; }
 }
 @media (max-width:640px){
   .post-list{ grid-template-columns:1fr; }
