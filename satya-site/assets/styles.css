@@ -324,6 +324,7 @@ section{ padding:96px 0; }
 }
 .testimonial-card .who b{ display:block; font-size:14.5px; }
 .testimonial-card .who span{ display:block; font-size:12.5px; color:var(--ink-soft); }
+.testimonial-grid.single{ grid-template-columns:minmax(0,640px); }
 @media (max-width:700px){ .testimonial-grid{ grid-template-columns:1fr; } }
 
 /* ---------- whatsapp inline CTA ---------- */

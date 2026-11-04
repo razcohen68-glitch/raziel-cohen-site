@@ -175,6 +175,10 @@
             <div><b>כתובת הקליניקה</b><a href="https://www.google.com/maps/search/?api=1&query=%D7%94%D7%A8%D7%91%20%D7%90%D7%95%D7%95%D7%A8%D7%91%D7%95%D7%9A%2027%2C%20%D7%A8%D7%9E%D7%AA%20%D7%94%D7%A9%D7%A8%D7%95%D7%9F" class="val" target="_blank" rel="noopener">הרב אוורבוך 27, רמת השרון</a></div>
           </div>
           <div class="contact-info-item">
+            <span class="dot" aria-hidden="true">🕘</span>
+            <div><b>זמינות</b><span class="val">ימים א'–ה', 9:00–18:00</span></div>
+          </div>
+          <div class="contact-info-item">
             <span class="dot" aria-hidden="true">◎</span>
             <div><b>אזור פעילות</b><span class="val">מפגשים פרונטליים ומקוונים, לפי תיאום</span></div>
           </div>
@@ -208,12 +212,12 @@
             </div>
             <div class="form-row">
               <div class="field">
-                <label for="phone">טלפון</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel">
+                <label for="phone">טלפון <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" required aria-required="true" autocomplete="tel" inputmode="tel" pattern="^(\+972|972|0)[\s\-]?([23489]|5\d|7\d)[\s\-]?\d{3}[\s\-]?\d{4}$" title="נא להזין מספר טלפון ישראלי תקין, למשל 053-304-0005">
               </div>
               <div class="field">
                 <label for="email">מייל <span class="req" aria-hidden="true">*</span></label>
-                <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+                <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="נא להזין כתובת מייל תקינה, למשל name@example.com">
               </div>
             </div>
             <div class="field">
@@ -301,7 +305,6 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span class="js-year">2026</span> רז כהן - מאמן אישי בשיטת סאטיה. כל הזכויות שמורות.</span>
       <span>אימון אישי הוא תהליך תומך צמיחה ואינו תחליף לטיפול נפשי במקרה הצורך.</span>
     </div>
   </div>
