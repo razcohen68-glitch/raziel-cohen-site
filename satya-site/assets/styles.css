@@ -242,7 +242,6 @@ section{ padding:96px 0; }
 .section-ink .ink-soft-text{ color:var(--ink-soft); }
 .section-head{ max-width:640px; margin-bottom:48px; }
 #services{ scroll-margin-top:220px; }
-.section-head.center{ margin-inline:auto; text-align:center; }
 .section-head p{ color:var(--ink-soft); font-size:17.5px; }
 .section-ink .section-head p{ color:var(--ink-soft); }
 
@@ -300,7 +299,7 @@ section{ padding:96px 0; }
 .check-list span{ color:var(--ink-soft); font-size:15px; }
 .section-ink .check-list span{ color:var(--ink-soft); }
 
-.belief-list{ list-style:none; margin:0; padding:0; display:grid; gap:0; max-width:820px; margin-inline:auto; }
+.belief-list{ list-style:none; margin:0; padding:0; display:grid; gap:0; max-width:820px; }
 .belief-list li{
   padding:26px 6px; border-bottom:1px solid var(--paper-line);
   font-family:var(--display); font-size:clamp(18px,2.4vw,25px);
