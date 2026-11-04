@@ -1,5 +1,11 @@
 /* ==========================================================================
    רז כהן - מאמן אישי בשיטת סאטיה
+   ==========================================================================
+   נקודות שבירה (max-width) - להשתמש רק באלה:
+     640  טלפון
+     840  טאבלט / תפריט ניווט
+     980  מחשב קטן (רשתות 2-3 עמודות, פוטר)
+     1080 כרטיסי שירותים (cards-4)
    ========================================================================== */
 
 /* ---------- self-hosted fonts (OFL-1.1: Heebo, Frank Ruhl Libre; subsets hebrew+latin) ---------- */
@@ -272,7 +278,7 @@ section{ padding:96px 0; }
 .cards-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
 .cards-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
 @media (max-width:1080px){ .cards-4{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:600px){ .cards-4{ grid-template-columns:1fr; } }
+@media (max-width:640px){ .cards-4{ grid-template-columns:1fr; } }
 
 .link-card{
   background:var(--paper); color:var(--ink); border-radius:var(--radius);
@@ -343,7 +349,7 @@ section{ padding:96px 0; }
 .testimonial-card .who b{ display:block; font-size:14.5px; }
 .testimonial-card .who span{ display:block; font-size:12.5px; color:var(--ink-soft); }
 .testimonial-grid.single{ grid-template-columns:minmax(0,640px); }
-@media (max-width:700px){ .testimonial-grid{ grid-template-columns:1fr; } }
+@media (max-width:640px){ .testimonial-grid{ grid-template-columns:1fr; } }
 
 /* ---------- whatsapp inline CTA ---------- */
 .btn-whatsapp{
@@ -455,7 +461,7 @@ section{ padding:96px 0; }
   border-radius:50%; box-shadow:0 30px 60px rgba(20,19,26,.28);
 }
 .about-intro{ display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:start; }
-@media (max-width:820px){
+@media (max-width:840px){
   .about-intro{ grid-template-columns:1fr; }
   .portrait-frame{ margin-bottom:12px; }
 }
@@ -540,7 +546,7 @@ html.a11y-nomotion *, html.a11y-nomotion *::before, html.a11y-nomotion *::after{
   animation:none !important; transition:none !important; scroll-behavior:auto !important;
 }
 body{ zoom:var(--a11y-zoom, 1); }
-@media (max-width:480px){
+@media (max-width:640px){
   .a11y-btn{ width:50px; height:50px; bottom:calc(20px + var(--cookie-h, 0px)); right:16px; }
   .a11y-panel{ right:16px; bottom:calc(80px + var(--cookie-h, 0px)); width:calc(100vw - 32px); }
 }
@@ -586,7 +592,7 @@ body{ zoom:var(--a11y-zoom, 1); }
   .footer-grid{ grid-template-columns:1fr; gap:32px; }
   .cta-band{ flex-direction:column; align-items:center; text-align:center; }
 }
-@media (max-width:560px){
+@media (max-width:640px){
   .picker-grid{ grid-template-columns:1fr; }
 }
 @media (max-width:840px){
@@ -609,7 +615,7 @@ body{ zoom:var(--a11y-zoom, 1); }
   }
   .nav-toggle{ display:flex; }
 }
-@media (max-width:720px){
+@media (max-width:640px){
   .form-row{ grid-template-columns:1fr; }
   .hero{ padding:64px 0 72px; }
   .hero-actions{ justify-content:center; }
@@ -617,7 +623,7 @@ body{ zoom:var(--a11y-zoom, 1); }
   .contact-card{ padding:28px; }
   .cta-band{ padding:36px 26px; }
 }
-@media (max-width:600px){
+@media (max-width:640px){
   h1{ font-size:clamp(32px,10vw,44px); }
   .hero-stats{ gap:28px; }
 }
