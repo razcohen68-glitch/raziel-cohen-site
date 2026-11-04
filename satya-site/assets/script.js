@@ -59,8 +59,10 @@
       });
       document.addEventListener('keydown', function(e){
         if(e.key === 'Escape'){
+          var wasOpen = drop.classList.contains('open');
           drop.classList.remove('open');
           dropBtn.setAttribute('aria-expanded', 'false');
+          if(wasOpen){ dropBtn.focus(); }
         }
       });
     }
@@ -108,7 +110,8 @@
     function loadPrefs(){
       try{
         var raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : {};
+        var obj = raw ? JSON.parse(raw) : {};
+        return (obj && typeof obj === 'object') ? obj : {};
       } catch(e){ return {}; }
     }
     function savePrefs(prefs){
@@ -122,9 +125,12 @@
         if(btn){ btn.setAttribute('aria-pressed', String(on)); }
       });
       var zoomIndex = prefs.zoomIndex || 0;
+      var zi = document.querySelector('.a11y-zoom-in'), zo = document.querySelector('.a11y-zoom-out');
+      if(zi){ zi.disabled = zoomIndex >= ZOOM_STEPS.length - 1; }
+      if(zo){ zo.disabled = zoomIndex <= 0; }
       htmlEl.style.setProperty('--a11y-zoom', ZOOM_STEPS[zoomIndex] || 1);
       var zoomLabel = document.querySelector('.a11y-zoom-label');
-      if(zoomLabel){ zoomLabel.textContent = Math.round((ZOOM_STEPS[zoomIndex] || 1) * 100) + '%'; }
+      if(zoomLabel){ zoomLabel.setAttribute('aria-live', 'polite'); zoomLabel.textContent = Math.round((ZOOM_STEPS[zoomIndex] || 1) * 100) + '%'; }
     }
 
     if(a11yBtn && a11yPanel){
@@ -134,6 +140,7 @@
       a11yBtn.addEventListener('click', function(){
         var open = a11yPanel.classList.toggle('open');
         a11yBtn.setAttribute('aria-expanded', String(open));
+        if(open){ var firstCtl = a11yPanel.querySelector('button:not(:disabled)'); if(firstCtl){ firstCtl.focus(); } }
       });
 
       document.addEventListener('click', function(e){
@@ -147,6 +154,7 @@
         if(e.key === 'Escape' && a11yPanel.classList.contains('open')){
           a11yPanel.classList.remove('open');
           a11yBtn.setAttribute('aria-expanded', 'false');
+          a11yBtn.focus();
         }
       });
 
