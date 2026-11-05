@@ -563,12 +563,12 @@ body{ zoom:var(--a11y-zoom, 1); }
   padding:20px 24px; display:none;
   box-shadow:0 -8px 30px rgba(0,0,0,.18);
 }
-.cookie-banner.show{ display:block; }
+.cookie-banner.show{ display:block; max-height:calc(50vh / var(--a11y-zoom, 1)); overflow-y:auto; } /* safety cap: never more than half the screen, even zoomed */
 .cookie-banner-inner{
   max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;
   gap:24px; flex-wrap:wrap;
 }
-.cookie-banner p{ margin:0; font-size:14.5px; color:var(--paper-soft); max-width:640px; }
+.cookie-banner p{ margin:0; font-size:14.5px; color:var(--paper-soft); max-width:640px; flex:1 1 360px; }
 .cookie-banner a{ color:var(--paper); text-decoration:underline; }
 .cookie-banner-actions{ display:flex; gap:12px; flex-shrink:0; flex-wrap:wrap; }
 .cookie-btn{
@@ -582,10 +582,18 @@ body{ zoom:var(--a11y-zoom, 1); }
 @media (max-width:640px){
   .cookie-banner{ padding:10px 16px 12px; }
   .cookie-banner-inner{ flex-direction:column; align-items:stretch; gap:8px; }
-  .cookie-banner p{ font-size:12.5px; line-height:1.4; }
+  .cookie-banner p{ font-size:12.5px; line-height:1.4; flex:0 1 auto; } /* column layout: do not let the desktop flex-basis become a height */
   .cookie-extra{ display:none; }
   .cookie-banner-actions{ gap:10px; flex-wrap:nowrap; }
   .cookie-btn{ flex:1; padding:8px 10px; font-size:14px; }
+}
+@media (max-height:520px){
+  .cookie-banner{ padding:8px 16px; }
+  .cookie-banner-inner{ flex-direction:row; align-items:center; flex-wrap:nowrap; gap:14px; }
+  .cookie-banner p{ font-size:12.5px; line-height:1.35; flex:1 1 auto; }
+  .cookie-extra{ display:none; }
+  .cookie-banner-actions{ flex-wrap:nowrap; }
+  .cookie-btn{ flex:none; padding:8px 16px; }
 }
 
 /* ---------- responsive ---------- */
