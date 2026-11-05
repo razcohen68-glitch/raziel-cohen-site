@@ -100,7 +100,28 @@
   try{
     var form = document.querySelector('.contact-form');
     if(form){
-      form.addEventListener('submit', function(){
+      form.addEventListener('submit', function(e){
+        // Build the mailto link ourselves: percent-encoded UTF-8 keeps Hebrew readable in every mail app
+        // (the plain-text form encoding turned Hebrew into gibberish on Android).
+        try{
+          var to = (form.getAttribute('action') || '').replace(/^mailto:/i, '');
+          if(to){
+            e.preventDefault();
+            var val = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+            var topic = val('topic');
+            var body = 'שם: ' + val('name') + '\r\n' +
+                       'טלפון: ' + val('phone') + '\r\n' +
+                       'מייל: ' + val('email') + '\r\n' +
+                       'מתעניינים ב: ' + topic + '\r\n\r\n' +
+                       val('message').replace(/\r?\n/g, '\r\n');
+            var subject = 'פנייה מהאתר' + (topic ? ' – ' + topic : '');
+            var a = document.createElement('a');
+            a.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          }
+        } catch(err){ console.error('mailto build error', err); }
         var success = document.querySelector('.form-success');
         if(success){ success.classList.add('show'); }
       });
