@@ -7,6 +7,16 @@
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }, 1800);
 
+  // ---- compact nav when the *effective* width (viewport / a11y zoom) is small ----
+  function syncNavCompact(){
+    try{
+      var z = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--a11y-zoom')) || 1;
+      document.documentElement.classList.toggle('nav-compact', window.innerWidth / z <= 980);
+    } catch(e){}
+  }
+  window.addEventListener('resize', syncNavCompact);
+  syncNavCompact();
+
   // ---- mobile nav toggle ----
   try{
     var toggle = document.querySelector('.nav-toggle');
@@ -139,6 +149,7 @@
       if(zi){ zi.disabled = zoomIndex >= ZOOM_STEPS.length - 1; }
       if(zo){ zo.disabled = zoomIndex <= 0; }
       htmlEl.style.setProperty('--a11y-zoom', ZOOM_STEPS[zoomIndex] || 1);
+      syncNavCompact();
       var zoomLabel = document.querySelector('.a11y-zoom-label');
       if(zoomLabel){ zoomLabel.setAttribute('aria-live', 'polite'); zoomLabel.textContent = Math.round((ZOOM_STEPS[zoomIndex] || 1) * 100) + '%'; }
     }
