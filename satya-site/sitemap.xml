@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://razielcohen.co.il/insights.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -81,6 +81,12 @@
   <url>
     <loc>https://razielcohen.co.il/insights/habits-and-change.html</loc>
     <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://razielcohen.co.il/insights/addictions.html</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
